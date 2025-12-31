@@ -2,7 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Heart, Calendar, Users, MapPin, Baby, Stethoscope, Activity, Shield, Clock, Phone, Target } from "lucide-react"
+import { Heart, Calendar, Users, MapPin, Baby, Stethoscope, Activity, Shield, Clock, Phone, Target, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
@@ -74,7 +74,7 @@ export default function HomePage() {
         </section>
 
         {/* About Section with 3 Cards */}
-        <section className="py-16 lg:py-24">
+        <section id="about" className="py-16 lg:py-24">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 font-serif text-3xl font-bold text-foreground lg:text-4xl">
@@ -146,31 +146,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section id="contact" className="bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 py-16 lg:py-24">
-          <div className="container mx-auto px-4 text-center lg:px-8">
-            <div className="mx-auto max-w-3xl space-y-6">
-              <h2 className="text-balance font-serif text-3xl font-bold text-foreground lg:text-4xl">
-                Schedule Your Consultation with Board-Certified Specialists
-              </h2>
-              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
-                Experience comprehensive women's healthcare with our team of experienced OB-GYN specialists. Same-day appointments available for urgent concerns.
-              </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-                  <Link href="/locations">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Now
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/locations">
-                    <MapPin className="mr-2 h-5 w-5" />
-                    Find a Location
-                  </Link>
-                </Button>
-              </div>
-            </div>
+        {/* Scrolling Text Section */}
+        <section className="py-8 overflow-hidden" style={{backgroundColor: 'rgba(255, 240, 243, 0.8)'}}>
+          <div className="whitespace-nowrap animate-scroll">
+            <span className="text-6xl font-bold inline-block px-8" style={{color: '#fffof3cc'}}>
+              WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • WOMEN'S HEALTH • 
+            </span>
           </div>
         </section>
       </main>

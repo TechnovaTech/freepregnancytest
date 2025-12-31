@@ -25,7 +25,7 @@ export function Navigation() {
             <Link href="/services" className="text-base font-bold hover:text-[#ee2b74] transition-colors">
               Services
             </Link>
-            <Link href="/about" className="text-base font-bold hover:text-[#ee2b74] transition-colors">
+            <Link href="/#about" className="text-base font-bold hover:text-[#ee2b74] transition-colors">
               About
             </Link>
             <Link href="/blog" className="text-base font-bold hover:text-[#ee2b74] transition-colors">
@@ -58,7 +58,7 @@ export function Navigation() {
               <Link href="/services" className="text-sm font-medium hover:text-primary">
                 Services
               </Link>
-              <Link href="/about" className="text-sm font-medium hover:text-primary">
+              <Link href="/#about" className="text-sm font-medium hover:text-primary">
                 About
               </Link>
               <Link href="/blog" className="text-sm font-medium hover:text-primary">
