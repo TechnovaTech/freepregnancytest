@@ -1,16 +1,20 @@
 import Link from "next/link"
-import { Heart, Phone, MapPin, Clock, Mail } from "lucide-react"
+import { Stethoscope, Phone, MapPin, Clock, Mail } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-pink-50 border-t">
+    <footer className="bg-pink-100 border-t">
       <div className="container mx-auto px-4 py-12 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <Heart className="h-8 w-8 text-primary" />
-              <span className="font-serif text-xl font-bold">Women's Health</span>
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/flogo image.png" 
+                alt="Free Pregnancy Test Logo" 
+                className="w-16 h-16 object-contain"
+              />
+              <span className="font-serif text-xl font-bold text-[#ee2b74]">Free Pregnancy Test</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Board-certified OB-GYN specialists providing comprehensive women's healthcare, advanced surgical procedures, and personalized care.
@@ -22,10 +26,9 @@ export function Footer() {
             <h3 className="font-semibold">Quick Links</h3>
             <div className="flex flex-col gap-2 text-sm">
               <Link href="/" className="hover:text-primary">Home</Link>
-              <Link href="/about" className="hover:text-primary">About</Link>
+              <Link href="/#about" className="hover:text-primary">About</Link>
               <Link href="/services" className="hover:text-primary">Services</Link>
-              <Link href="/locations" className="hover:text-primary">Locations</Link>
-              <Link href="/contact" className="hover:text-primary">Contact</Link>
+              <Link href="/#cash-pay" className="hover:text-primary">Cash Pay</Link>
             </div>
           </div>
 
@@ -34,15 +37,15 @@ export function Footer() {
             <h3 className="font-semibold text-black">Maryvale office</h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
+                <MapPin className="h-4 w-4 text-[#ee2b74]" />
                 <span className="text-sm">4700 North 51st Avenue, Phoenix, Arizona 85031</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4 text-[#ee2b74]" />
                 <span className="text-sm">623-846-7597</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-[#ee2b74]" />
                 <div>
                   <p className="text-sm font-medium">Hours Monday - Friday</p>
                   <p className="text-sm">Open today 08:00 am - 05:00 pm</p>
@@ -68,15 +71,15 @@ export function Footer() {
             <h3 className="font-semibold text-black">Arrowhead office</h3>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
+                <MapPin className="h-4 w-4 text-[#ee2b74]" />
                 <span className="text-sm">18699 North 67th Avenue suite 320, Glendale, AZ, USA</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
+                <Phone className="h-4 w-4 text-[#ee2b74]" />
                 <span className="text-sm">623-846-7597</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-primary" />
+                <Clock className="h-4 w-4 text-[#ee2b74]" />
                 <div>
                   <p className="text-sm font-medium">Hours Monday - Friday</p>
                   <p className="text-sm">Open today 08:00 am - 05:00 pm</p>
@@ -102,7 +105,7 @@ export function Footer() {
         <div className="mt-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4">
             <div className="col-span-2 border-t pt-4 text-sm text-muted-foreground">
-              <p>&copy; 2024 Arizona Women's Specialists. All rights reserved.</p>
+              <p>&copy; 2024 Free Pregnancy Test. All rights reserved.</p>
             </div>
           </div>
         </div>

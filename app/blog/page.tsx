@@ -1,9 +1,13 @@
+'use client'
+
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, User, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 const blogPosts = [
   {
@@ -55,83 +59,58 @@ const blogPosts = [
     date: "March 5, 2024",
     readTime: "9 min read",
     image: "/blonde-female-doctor-in-medical-coat-smiling-warml.jpg"
-  },
-  {
-    id: 6,
-    title: "Postpartum Recovery: Your Guide to Healing",
-    excerpt: "Essential information about physical and emotional recovery after childbirth, including when to seek medical attention.",
-    category: "Postpartum",
-    author: "Dr. Rachel Williams",
-    date: "March 3, 2024",
-    readTime: "10 min read",
-    image: "/african-american-female-doctor-in-medical-coat-con.jpg"
   }
 ]
 
 export default function BlogPage() {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navigation />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 py-16 lg:py-24">
+        <section className="py-16 lg:py-24" style={{backgroundColor: '#fdf2f8'}}>
           <div className="container mx-auto px-4 lg:px-8">
             <div className="text-center">
               <h1 className="mb-4 font-serif text-4xl font-bold text-foreground lg:text-5xl">
                 Women's Health Blog
               </h1>
-              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Expert insights, health tips, and the latest information on women's healthcare from our board-certified specialists.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Blog Posts Grid */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {blogPosts.map((post) => (
-                <Card key={post.id} className="group overflow-hidden border-border hover:shadow-lg transition-all">
-                  <div className="aspect-[16/10] overflow-hidden">
+              
+              {/* Card below heading */}
+              <div className="max-w-sm mx-auto mt-8">
+                <Card className="border-border" style={{backgroundColor: '#f7f7f7'}}>
+                  <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden rounded-t-lg">
                     <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      src="/b1 image.png"
+                      alt="Birth Control"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                   <CardContent className="p-6 space-y-4">
-                    <Badge className="w-fit">{post.category}</Badge>
-                    <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {post.title}
+                    <div className="text-xs text-muted-foreground">
+                      March 20, 2024
+                    </div>
+                    <h3 className="font-serif text-xl font-semibold text-foreground">
+                      Birth Control
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <User className="h-3 w-3" />
-                        {post.author}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Calendar className="h-3 w-3" />
-                      {post.date}
-                    </div>
-                    <Link
-                      href={`/blog/${post.id}`}
-                      className="inline-flex items-center gap-1 text-sm text-primary font-medium hover:underline"
+                    {isExpanded && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        When feeling unsure about starting or growing your family, you may be considering your birth control options. At Arizona Women's Specialists in Glendale and Phoenix, Arizona, Hetal Shah, Kassandra Reil CNM and Traci Aldridge WHNP offer many types of birth control, from the pill to tubal ligation. No matter where you are in your life, the team at Arizona Women's Specialists has a family planning option for you. Schedule your birth control consultation by calling the office most convenient to you or booking an appointment online today.
+                      </p>
+                    )}
+                    <Button 
+                      size="sm" 
+                      style={{backgroundColor: '#ee2b74', color: 'white'}} 
+                      className="hover:bg-primary/90"
+                      onClick={() => setIsExpanded(!isExpanded)}
                     >
-                      Read More <ArrowRight className="h-3 w-3" />
-                    </Link>
+                      {isExpanded ? 'Show Less' : 'Continue Reading'}
+                    </Button>
                   </CardContent>
                 </Card>
-              ))}
+              </div>
             </div>
           </div>
         </section>
